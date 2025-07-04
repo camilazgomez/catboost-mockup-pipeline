@@ -1,0 +1,51 @@
+# Entorno virtual
+venv/
+.venv/
+
+# Archivos Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de logs
+*.log
+
+# Archivos temporales y de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de editor
+.vscode/
+.idea/
+
+# Archivos de Jupyter Notebook checkpoint
+.ipynb_checkpoints/
+
+# Archivos de test/coverage
+htmlcov/
+.tox/
+.nox/
+coverage.*
+.cache
+.pytest_cache/
+
+# Paquetes distribuidos
+dist/
+build/
+*.egg-info/
+
+# Archivos de salida comunes
+*.csv
+*.json
+*.tsv
+*.parquet
+*.pkl
+*.cbm
+
+# Entornos de ejecución
+.env
+.env.*
+
+# Configuración de MyPy o Pylint
+.mypy_cache/
+.pyre/
