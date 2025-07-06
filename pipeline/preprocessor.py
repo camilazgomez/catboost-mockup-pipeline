@@ -32,6 +32,9 @@ def categorizar_apache_numerico(puntaje):
             return cat
     return 8
 
+# Transforma un DataFrame crudo con fichas de pacientes en variables procesadas para el modelo.
+# Aplica extracción de valores, discretización de IMC y APACHE, cálculo de días y codificación binaria.
+
 def prepare_features(df: pd.DataFrame) -> pd.DataFrame:
     out = pd.DataFrame(index=df.index)
     out["_id"] = df["_id"]
@@ -75,6 +78,9 @@ def prepare_features(df: pd.DataFrame) -> pd.DataFrame:
 
     return out
 
+# Preprocesador para variables tabulares:
+#     - Imputa variables numéricas con la mediana.
+#     - Asegura los tipos finales requeridos por el modelo (str, int, float).
 class TabularPreprocessor(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         self.medians_ = X[NUM_COLS].median()

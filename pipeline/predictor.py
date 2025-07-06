@@ -6,11 +6,16 @@ from pipeline.preprocessor import TabularPreprocessor
 from pipeline.preprocessor import prepare_features, ALL_COLS, CAT_COLS, BIN_COLS
 
 class Predictor:
+    # Inicializa el predictor cargando el modelo y el preprocesador desde un archivo .pkl.
+    
     def __init__(self, bundle_path):
         sys.modules["__main__"].TabularPreprocessor = TabularPreprocessor
         bundle = joblib.load(bundle_path)
         self.model = bundle["model"]
         self.preproc = bundle["pp"]
+
+    # Recibe un DataFrame crudo con datos de pacientes, aplica el preprocesamiento
+    # y devuelve la probabilidad de clase positiva (fracaso) para cada paciente.
 
     def predict_proba(self, df_raw: pd.DataFrame) -> list:
         df_feat = prepare_features(df_raw)
