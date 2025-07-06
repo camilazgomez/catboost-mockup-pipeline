@@ -40,7 +40,6 @@ build/
 *.tsv
 *.parquet
 *.pkl
-*.cbm
 
 # Entornos de ejecución
 .env
