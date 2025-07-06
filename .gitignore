@@ -39,7 +39,6 @@ build/
 *.json
 *.tsv
 *.parquet
-*.pkl
 
 # Entornos de ejecución
 .env
